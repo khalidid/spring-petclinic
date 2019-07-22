@@ -1,2 +1,2 @@
-FROM node:8.16.0-jessie
+FROM node:12.6.0-alpine
 RUN apk add -U subversion
