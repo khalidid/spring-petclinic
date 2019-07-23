@@ -1,11 +1,5 @@
-pipeline {
-    agent { dockerfile true }
-    stages {
-        stage('Test') {
-            steps {
-                sh 'node --version'
-                sh 'svn --version'
-            }
-        }
-    }
+@Library('utils') import org.foo.Utilities
+def utils = new Utilities(this)
+node {
+  utils.mvn 'clean package'
 }
